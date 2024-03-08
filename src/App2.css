@@ -74,15 +74,47 @@
 	padding-left: 10px;
 }
 
-.top {
+.login-container {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
-.login-container {
-	width: 400px;
+.login {
 	border: 2px solid gray;
 	border-radius: 5px;
+	width: 400px;
 	padding: 20px;
 	box-shadow: 3px 3px 3px 1px rgb(128, 128, 128, 0.5);
+}
+
+.log-input {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.log-button {
+	text-align: center;
+}
+
+.id,
+.password {
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	/* 각 입력 요소 사이의 간격을 조절합니다 */
+}
+
+.id span {
+	margin-right: 10px;
+}
+
+.id input,
+.password input {
+	padding-left: 10px;
+	width: 60%;
+	/* 입력 요소의 너비를 조절합니다 */
 }
