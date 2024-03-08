@@ -1,0 +1,118 @@
+.login-btn {
+	display: flex;
+	justify-content: end;
+	margin: 20px;
+	margin-right: 50px;
+}
+
+#login-btn {
+	padding: 0 10px;
+	border-radius: 10px;
+	transition: all 0.6s;
+}
+
+#login-btn:hover {
+	background: pink;
+}
+
+.fa-user {
+	padding-top: 5px;
+	padding-right: 20px;
+}
+
+.hmlogo {
+	display: flex;
+	justify-content: center;
+}
+
+.menu-line {
+	display: flex;
+	justify-content: center;
+}
+
+.menus {
+	display: flex;
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.menus li {
+	padding: 10px;
+}
+
+
+.search input {
+	padding: 5px;
+	border-radius: 3px;
+}
+
+.search {
+	margin: 0 20px;
+}
+
+.search .fa-magnifying-glass {
+	margin: 0 10px;
+}
+
+.card {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	transition: all 0.6s;
+}
+
+.card:hover {
+	transform: scale(1.1);
+	z-index: 2;
+}
+
+.force-space {
+	height: 1em;
+}
+
+.description {
+	padding-left: 10px;
+}
+
+.login-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login {
+	border: 2px solid gray;
+	border-radius: 5px;
+	width: 400px;
+	padding: 20px;
+}
+
+.log-input {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.log-button {
+	text-align: center;
+}
+
+.id,
+.password {
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	/* 각 입력 요소 사이의 간격을 조절합니다 */
+}
+
+.id span {
+	margin-right: 10px;
+}
+
+.id input,
+.password input {
+	padding-left: 10px;
+	width: 60%;
+	/* 입력 요소의 너비를 조절합니다 */
+}
