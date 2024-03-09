@@ -35,7 +35,7 @@ const ProductDetail = () => {
 			<div id="detail-item-choice">{item?.choice ==true? "Conscious choice": ""}</div>
 			<DropdownButton id="size-dropdown" title="사이즈 선택">
 				{sizes.map(size =>
-					<Dropdown.Item onClick={() => handleSizeSelect(size)}>{size}</Dropdown.Item>
+					<Dropdown.Item onClick={() => handleSizeSelect(size)} key={size}>{size}</Dropdown.Item>
 				)}
 			</DropdownButton> 
 			<div id="detail-item-selectedSize">선택한 Size : {selectedSize}</div>

@@ -4,15 +4,27 @@ import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate} from 'react-router-dom'
 
-const Navbar = ({authenticate}) => {
+const Navbar = ({authenticate, setAuthenticate}) => {
 	const menus=['여성', 'Divided', '남성','신생아/유아', '아동', 'H&M HOME', 'Sale', '지속가능성'];
 	const navigate = useNavigate()
 	const handleLoginClick=()=>{
 		if(authenticate ===false){
 			navigate('/login')
+			setAuthenticate(prev => !prev)
 		}else{
 			//로그아웃로직
 			navigate('/')
+			setAuthenticate(prev => !prev)
+		}
+	}
+	const search =(event)=>{
+		if(event.key =='Enter'){
+			let keyword = event.target.value;
+			console.log('keyword : ',keyword )
+			event.target.value ="";//input 비운다.
+			//브라우저 url을 바꿔준다.
+			navigate(`/?q=${keyword}`)
+
 		}
 	}
   return (
@@ -30,7 +42,7 @@ const Navbar = ({authenticate}) => {
 			</ul>
 			<div className="search">
 				<FontAwesomeIcon icon={faSearch} />
-				<input type="text" placeholder="제품 검색" />
+				<input type="text" onKeyPress={(event)=>search(event)} placeholder="제품 검색" />
 			</div>
 
 		</div>
