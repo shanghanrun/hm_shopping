@@ -9,7 +9,8 @@ const ProductDetail = () => {
 	const [sizes, setSizes] =useState([])
 	const [selectedSize, setSelectedSize]=useState('')
 	const getItem =async()=>{
-		let url =`http://localhost:5000/products/${id}`
+		// let url =`http://localhost:5000/products/${id}`
+		let url = `https://my-json-server.typicode.com/shanghanrun/hm_shopping/products/${id}`
 		const response = await fetch(url)
 		const data = await response.json()
 		console.log('item : ', data)
