@@ -10,7 +10,7 @@ const Navbar = ({authenticate, setAuthenticate}) => {
 	const handleLoginClick=()=>{
 		if(authenticate ===false){
 			navigate('/login')
-			setAuthenticate(prev => !prev)
+			// setAuthenticate(prev => !prev)
 		}else{
 			//로그아웃로직
 			navigate('/')
