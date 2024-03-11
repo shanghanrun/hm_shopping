@@ -14,7 +14,7 @@ const Navbar = () => {
 	const handleLoginClick=()=>{
 		if(authenticate ===false){
 			navigate('/login')
-			dispatch(authenticateAction.loginButtonClick(!authenticate))
+			// dispatch(authenticateAction.loginButtonClick(!authenticate))
 			// setAuthenticate(prev => !prev)
 		}else{
 			//로그아웃로직
@@ -37,7 +37,7 @@ const Navbar = () => {
 	<div>
 		<div className="login-btn" onClick={handleLoginClick} >
 			<FontAwesomeIcon icon={faUser} />
-			<div id="login-btn">{authenticate ==true ? "로그아웃": "로그인"}</div>
+			<div id="login-btn">{authenticate ===true ? "로그아웃": "로그인"}</div>
 		</div>
 		<div className="hmlogo">
 			<img width={150} src="https://tse4.mm.bing.net/th?id=OIP._RBfiehkYJpMAx03aSy0AQHaE4&pid=Api&P=0&h=220" alt="hmlogo" />
