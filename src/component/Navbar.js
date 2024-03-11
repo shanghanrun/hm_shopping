@@ -3,18 +3,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate} from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
+import { authenticateAction } from '../redux/actions/authenticateAction'
 
-const Navbar = ({authenticate, setAuthenticate}) => {
+const Navbar = () => {
 	const menus=['여성', 'Divided', '남성','신생아/유아', '아동', 'H&M HOME', 'Sale', '지속가능성'];
+	const authenticate = useSelector(state => state.auth.authenticate)
+	const dispatch = useDispatch()
 	const navigate = useNavigate()
 	const handleLoginClick=()=>{
 		if(authenticate ===false){
 			navigate('/login')
-			setAuthenticate(prev => !prev)
+			dispatch(authenticateAction.loginButtonClick(!authenticate))
+			// setAuthenticate(prev => !prev)
 		}else{
 			//로그아웃로직
 			navigate('/')
-			setAuthenticate(prev => !prev)
+			dispatch(authenticateAction.loginButtonClick(!authenticate))
+			// setAuthenticate(prev => !prev)
 		}
 	}
 	const search =(event)=>{

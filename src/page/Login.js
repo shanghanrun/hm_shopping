@@ -2,9 +2,9 @@ import React, {useState}from 'react'
 import {Container, Form, Button} from 'react-bootstrap'
 import {useNavigate} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
-import { authenticateAction } from './../redux/authenticateAction';
+import { authenticateAction } from '../redux/actions/authenticateAction';
 
-const Login = ({setAuthenticate}) => {
+const Login = () => {
 	const [id, setId]= useState('')
 	const [password, setPassword] = useState('')
 	const navigate = useNavigate()

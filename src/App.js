@@ -5,8 +5,9 @@ import ProductAll from './page/ProductAll';
 import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
-import { useState } from 'react';
+// import { useState } from 'react';
 import PrivateRoute from './route/PrivateRoute';
+import {useSelector} from 'react-redux'
 
 //1. 전체상품페이지, 로그인, 상품상세페이지
 //1-1. 네비게이션 바
@@ -20,17 +21,17 @@ import PrivateRoute from './route/PrivateRoute';
 //9. 상품을 검색할 수 있다.
 
 function App() {
-  const [authenticate, setAuthenticate]= useState(false)
+  const authenticate= useSelector(state=> state.auth.authenticate)
   // const PrivateRoute =({authenticate})=>{
   //   return authenticate === true? <ProductDetail /> : <Navigate to="/login"/>
   // }
 
   return (
     <div >
-      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate}/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route path="/login" element={<Login setAuthenticate={setAuthenticate}/>} />
+        <Route path="/login" element={<Login />} />
 
         <Route path="/product/:id" element={<PrivateRoute authenticate={authenticate} />} />
       </Routes>

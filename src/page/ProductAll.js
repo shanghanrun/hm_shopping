@@ -3,12 +3,12 @@ import { useState, useEffect} from 'react'
 import Card from '../component/Card'
 import {Container, Row, Col} from 'react-bootstrap';
 import { useSearchParams } from 'react-router-dom';
-import { productAction } from '../redux/productAction';
+import { productAction } from '../redux/actions/productAction';
 import {useDispatch, useSelector} from 'react-redux'
 
 const ProductAll = () => {
 	// const [products, setProducts]=useState([])
-	const products = useSelector(state => state.products)
+	const products = useSelector(state => state.product.products)
 	const [query, setQuery] = useSearchParams()
 	const dispatch = useDispatch()
 
