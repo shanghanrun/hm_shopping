@@ -3,19 +3,20 @@ import { useState, useEffect} from 'react'
 import Card from '../component/Card'
 import {Container, Row, Col} from 'react-bootstrap';
 import { useSearchParams } from 'react-router-dom';
+import { productAction } from '../redux/productAction';
+import {useDispatch, useSelector} from 'react-redux'
 
 const ProductAll = () => {
-	const [products, setProducts]=useState([])
+	// const [products, setProducts]=useState([])
+	const products = useSelector(state => state.products)
 	const [query, setQuery] = useSearchParams()
-	const getProducts= async()=>{
+	const dispatch = useDispatch()
+
+	const getProducts= ()=>{
 		let searchQuery = query.get('q') || ""
 		console.log('searchQuery : ', searchQuery )
-		// let url =`http://localhost:5000/products?q=${searchQuery}`
-		let url = `https://my-json-server.typicode.com/shanghanrun/hm_shopping/products?q=${searchQuery}`
-		let response = await fetch(url)
-		let data = await response.json()
-		console.log('products : ', data )
-		setProducts(data)
+		dispatch(productAction.getProducts(searchQuery))   //action을 productAction.getProducts실행한 리턴값으로
+		
 	}
 	useEffect(()=>{
 		getProducts()
